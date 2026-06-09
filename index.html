@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Mario Bros.</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div id="menu-screen" class="screen">
+    <div class="menu-border">
+      <div class="title-block">
+        <div class="title-line"><span class="title-crown">*</span></div>
+        <div class="title-line"><span class="title-sm">SUPER</span></div>
+        <div class="title-line"><span class="title-lg">FATQ</span></div>
+        <div class="title-line"><span class="title-sm">BROS.</span></div>
+        <div class="title-line"><span class="title-crown">*</span></div>
+      </div>
+      <div class="menu-character-area">
+        <canvas id="menu-mario-canvas" width="120" height="160"></canvas>
+      </div>
+      <div class="name-section">
+        <label for="player-name" class="name-label">NAME</label>
+        <input type="text" id="player-name" maxlength="8" class="name-input" value="QQ" autofocus>
+        <div class="name-instruction">8 LETTERS MAX</div>
+      </div>
+      <div class="menu-actions">
+        <button id="start-btn" class="pixel-btn">1 PLAYER GAME</button>
+        <button id="controls-btn" class="pixel-btn">CONTROLS</button>
+      </div>
+      <div class="menu-footer">
+        <span class="footer-copyright">&copy; 2026 Q-MARIO</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="game-screen" class="screen hidden">
+    <div id="hud">
+      <div class="hud-row">
+        <span class="hud-item"><span class="hud-label">SCORE</span><br><span id="hud-score" class="hud-value">000000</span></span>
+        <span class="hud-item"><span class="hud-label">COINS</span><br><span id="hud-coins" class="hud-value">x00</span></span>
+        <span class="hud-item"><span class="hud-label">WORLD</span><br><span id="hud-world" class="hud-value">1-1</span></span>
+        <span class="hud-item"><span class="hud-label">TIME</span><br><span id="hud-time" class="hud-value">400</span></span>
+        <span class="hud-item"><span class="hud-label">LIVES</span><br><span id="hud-lives" class="hud-value">x3</span></span>
+      </div>
+      <div class="hud-row hud-name-row">
+        <span id="hud-player-name">MARIO</span>
+      </div>
+    </div>
+    <div id="canvas-wrapper">
+      <canvas id="game-canvas" width="960" height="480"></canvas>
+      <div id="pause-indicator" class="game-overlay hidden">PAUSED</div>
+      <div id="gameover-overlay" class="game-overlay hidden">
+        <div class="overlay-title">GAME OVER</div>
+        <div class="overlay-score">COME BACK TO HK!</div>
+        <div class="overlay-score">SCORE: <span id="go-score">0</span></div>
+        <button id="continue-btn" class="pixel-btn overlay-btn">CONTINUE</button>
+      </div>
+      <div id="victory-overlay" class="game-overlay hidden">
+        <div class="overlay-title victory-title">COURSE CLEAR!</div>
+        <div class="overlay-subtitle">HOW ARE YOU IN AUS, <span id="victory-name">MARIO</span>!</div>
+        <div class="overlay-score victory-score">SCORE: <span id="victory-score">000000</span></div>
+        <div class="overlay-msg">2026 Jun, Ry</div>
+        <button id="playagain-btn" class="pixel-btn overlay-btn">PLAY AGAIN</button>
+      </div>
+      <div id="flagpole-overlay" class="game-overlay hidden">
+        <div class="overlay-flags" id="overlay-flags"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="controls-modal" class="modal hidden">
+  <div class="modal-content">
+    <h2 class="modal-title">CONTROLS</h2>
+    <div class="controls-grid">
+      <div class="ctrl-row"><span class="key-label">MOVE</span><span class="key-keys">ARROWS / A D</span></div>
+      <div class="ctrl-row"><span class="key-label">JUMP</span><span class="key-keys">UP / W / SPACE</span></div>
+      <div class="ctrl-row"><span class="key-label">RUN</span><span class="key-keys">SHIFT / Z</span></div>
+      <div class="ctrl-row"><span class="key-label">PAUSE</span><span class="key-keys">P / ESC</span></div>
+      <div class="ctrl-row"><span class="key-label">START</span><span class="key-keys">ENTER</span></div>
+    </div>
+    <button id="close-controls" class="pixel-btn">CLOSE</button>
+  </div>
+</div>
+
+<script src="js/game.js"></script>
+</body>
+</html>
