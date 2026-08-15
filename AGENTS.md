@@ -24,3 +24,13 @@ js/game.js        Complete game engine (~1200 lines)
 
 ## Commands
 None (no build system). Open `index.html` via file:// or any static server.
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues at [garykhfung/Q_Mario](https://github.com/garykhfung/Q_Mario) (canonical) plus local markdown scratchpad under `.scratch/`. See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+Single-context — `CONTEXT.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.
