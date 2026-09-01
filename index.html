@@ -5,17 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Super Mario Bros.</title>
 <link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+  }
+}
+</script>
 </head>
 <body>
 <div id="app">
   <div id="menu-screen" class="screen">
     <div class="menu-border">
       <div class="title-block">
-        <div class="title-line"><span class="title-crown">*</span></div>
         <div class="title-line"><span class="title-sm">SUPER</span></div>
         <div class="title-line"><span class="title-lg">FATQ</span></div>
         <div class="title-line"><span class="title-sm">BROS.</span></div>
-        <div class="title-line"><span class="title-crown">*</span></div>
       </div>
       <div class="menu-character-area">
         <canvas id="menu-mario-canvas" width="120" height="160"></canvas>
@@ -46,6 +51,7 @@
       </div>
       <div class="hud-row hud-name-row">
         <span id="hud-player-name">MARIO</span>
+        <button id="view-toggle" class="pixel-btn view-toggle" type="button">2D PIXELS</button>
       </div>
     </div>
     <div id="canvas-wrapper">
@@ -64,9 +70,6 @@
         <div class="overlay-msg">2026 Jun, Ry</div>
         <button id="playagain-btn" class="pixel-btn overlay-btn">PLAY AGAIN</button>
       </div>
-      <div id="flagpole-overlay" class="game-overlay hidden">
-        <div class="overlay-flags" id="overlay-flags"></div>
-      </div>
     </div>
   </div>
 </div>
@@ -78,6 +81,7 @@
       <div class="ctrl-row"><span class="key-label">MOVE</span><span class="key-keys">ARROWS / A D</span></div>
       <div class="ctrl-row"><span class="key-label">JUMP</span><span class="key-keys">UP / W / SPACE</span></div>
       <div class="ctrl-row"><span class="key-label">RUN</span><span class="key-keys">SHIFT / Z</span></div>
+      <div class="ctrl-row"><span class="key-label">FIRE</span><span class="key-keys">X / C</span></div>
       <div class="ctrl-row"><span class="key-label">PAUSE</span><span class="key-keys">P / ESC</span></div>
       <div class="ctrl-row"><span class="key-label">START</span><span class="key-keys">ENTER</span></div>
     </div>
@@ -85,6 +89,6 @@
   </div>
 </div>
 
-<script src="js/game.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
