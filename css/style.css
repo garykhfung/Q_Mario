@@ -201,6 +201,14 @@ html, body {
 .hud-name-row {
   justify-content: center;
   margin-top: 2px;
+  gap: 16px;
+  align-items: center;
+}
+
+.view-toggle {
+  font-size: 8px;
+  padding: 6px 10px;
+  letter-spacing: 1px;
 }
 
 .hud-item {
@@ -234,7 +242,8 @@ html, body {
   flex-shrink: 0;
 }
 
-#game-canvas {
+#game-canvas,
+#game-canvas-3d {
   display: block;
   width: 960px;
   height: 480px;
